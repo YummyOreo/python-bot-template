@@ -12,7 +12,7 @@ $ cd python-bot-template
 ```
 #### Install dependencies:
 ```console
-$ pip i -r requirements.txt
+$ pip install -r requirements.txt
 ```
 #### Env values:
 Rename [`.env.example`](https://github.com/OreoDivision/python-bot-template/blob/main/.env.example) to `.env` and fill out teh fields
