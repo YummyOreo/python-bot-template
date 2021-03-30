@@ -36,4 +36,5 @@ for filename in os.listdir(directory):
 		#Logs the fail
 		print(f'[Faile] Failed to load {filename}')
 
-bot.run(config('TOKEN'))
+token = config['TOKEN']
+bot.run(token)
