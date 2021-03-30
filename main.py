@@ -24,8 +24,6 @@ async def on_ready():
 directory = r'.\cogs'
 #Loads in all of the cogs
 for filename in os.listdir(directory):
-	if filename == "__pycache__":
-		return
 
 	#Checks if its a .py file
 	if filename.endswith(".py"):
@@ -35,7 +33,7 @@ for filename in os.listdir(directory):
 		bot.load_extension(f'cogs.{filename[:-3]}')
 		#logs that its loaded
 		print(f'[Loaded] {filename[:-3]}')
-	else:
+	else if filename != "__pycache__":
 		#Logs the fail
 		print(f'[Faile] Failed to load {filename}')
 
