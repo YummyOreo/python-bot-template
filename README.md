@@ -28,7 +28,7 @@ How to add commands:
 Go to [`example.py`](https://github.com/OreoDivision/python-bot-template/blob/main/example.py) and copy its contents.
 ### Make a new file
 Make a new file in the cogs folder. The file has to be named the command name.
-### Past
-Past the contents of [`example.py`](https://github.com/OreoDivision/python-bot-template/blob/main/example.py) into your new file!
+### Paste
+Paste the contents of [`example.py`](https://github.com/OreoDivision/python-bot-template/blob/main/example.py) into your new file!
 ### Code
 Now code any code you want in your command
