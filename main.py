@@ -24,7 +24,10 @@ async def on_ready():
 directory = r'.\cogs'
 #Loads in all of the cogs
 for filename in os.listdir(directory):
-	#Chacks if its a .py file
+	if filename == "__pycache__":
+		return
+
+	#Checks if its a .py file
 	if filename.endswith(".py"):
 		#Logs it
 		print(f'[Loading] {filename[:-3]}...')
