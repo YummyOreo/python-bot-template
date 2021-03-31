@@ -16,7 +16,7 @@ async def on_ready():
 	#Gets the local time
 	localtime = time.asctime(time.localtime(time.time()))
 	#Prints when ready
-	print(f"**[{localtime}]** Main file online`")
+	print(f"[{localtime}] Main file online")
 	#changes the activity
 	await bot.change_presence(activity=discord.Game(name=config["ACTIVITY"]))
 
@@ -33,7 +33,7 @@ for filename in os.listdir(directory):
 		bot.load_extension(f'cogs.{filename[:-3]}')
 		#logs that its loaded
 		print(f'[Loaded] {filename[:-3]}')
-	else if filename != "__pycache__":
+	else:
 		#Logs the fail
 		print(f'[Faile] Failed to load {filename}')
 
