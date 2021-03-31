@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import os, time
+from modules import arrows, color
 from dotenv import dotenv_values
 
 #Loads the .env file
@@ -16,7 +17,7 @@ async def on_ready():
 	#Gets the local time
 	localtime = time.asctime(time.localtime(time.time()))
 	#Prints when ready
-	print(f"[{localtime}] Main file online")
+	color.green(f'[{localtime}]', f'{arrows.RIGHT} Main file online')
 	#changes the activity
 	await bot.change_presence(activity=discord.Game(name=config["ACTIVITY"]))
 
@@ -28,14 +29,14 @@ for filename in os.listdir(directory):
 	#Checks if its a .py file
 	if filename.endswith(".py"):
 		#Logs it
-		print(f'[Loading] {filename[:-3]}...')
+		color.yellow('[Loading]', f'{arrows.RIGHT} {filename[:-3]}...')
 		#Loads it
 		bot.load_extension(f'cogs.{filename[:-3]}')
 		#logs that its loaded
-		print(f'[Loaded] {filename[:-3]}')
+		color.green('[Loaded]', f'{arrows.RIGHT} {filename[:-3]}...')
 	else:
 		#Logs the fail
-		print(f'[Faile] Failed to load {filename}')
+		color.red('[Faile]', f'{arrows.RIGHT} {filename}...')
 
 token = config['TOKEN']
 bot.run(token)
